@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>auction details</title>
+</head>
+
+<body>
+    <div class="container" id="container">
+    <div>
+            <script>
+                let data=document.cookie;
+                console.log(data);
+               let container=document.getElementById('container')
+           
+                let colorMapping = {
+                    APPROVED: "blue",
+                    PENDING: "yellow",
+                    CANCELLED: "red",
+                    COMPLETED: "green",
+                }
+
+                let textColoring = {
+                    APPROVED: "white",
+                    PENDING: "blue",
+                    CANCELLED: "white",
+                    COMPLETED: "white"
+                }
+             
+                let card=document.createElement('div');
+             
+                card.innerHTML = `
+         
+         <div class="top-container">
+            <h1>auction details</h1>
+         <div class
+             <span class="badge" style="color:${textColoring[status]};background-color:${colorMapping[status]}">${status}</span>
+             <span>${data.caseNumber}</span>
+         </div>
+         <div class="right">${data.date}</div>
+       </div>
+     <div class="bottom-container">
+         <b>${data.fromLocation}</b>
+         <p>${data.toLocation}</p>
+         <b class="price">${data.fare}</b>
+     </div>`
+         container.appendChild(card);
+      
+  
+
+            </script>
+</body>
+
+</html>
